@@ -6,6 +6,11 @@ import React ,{useState} from 'react'
 
 export default function TextForm(props) {
 
+  const handleClear=()=>{
+    let newText='';
+    setText(newText)
+  }
+
   const Uppercase =()=>{
     
    
@@ -37,6 +42,7 @@ export default function TextForm(props) {
 
       </div>
        
+    <button className='btn btn-primary mx-1' onClick={handleClear} >Clear Text</button>
     <button className='btn btn-primary mx-1' onClick={Uppercase} >Convert to Uppercase</button>
     <button className='btn btn-primary mx-1' onClick={Lowercase} >Convert to Lowercase</button>
 
