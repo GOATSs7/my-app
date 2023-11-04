@@ -30,6 +30,8 @@ export default function TextForm(props) {
 
   }
 
+  
+  // this code will  select copy whole text and copy as ti is 
 // const handleCopy =()=>{
 //   console.log( "copy is clicked")
 //   let text=document.getElementById('myBox')
@@ -37,8 +39,9 @@ export default function TextForm(props) {
 //   navigator.clipboard.writeText(text.value)
 // }
 
+//  this code will copy whole text as well as select text only so this has more functionality than upper code
 const handleCopy = () => {
-  const textToCopy = document.getElementById('myBox');
+const textToCopy = document.getElementById('myBox');
   if (textToCopy) {
     const selectedText = textToCopy.value.substring(textToCopy.selectionStart, textToCopy.selectionEnd);
 
@@ -52,13 +55,25 @@ const handleCopy = () => {
         }
       );
     }
+    else{
+      textToCopy.select();
+      navigator.clipboard.writeText(textToCopy.value)
   }
-  else{
-    textToCopy.select();
-    navigator.clipboard.writeText(textToCopy.value)
-}
+ }
 };
 
+//  const handleExtraSpaces =()=>{
+//   const textToCopy = document.getElementById('myBox').value;  
+//   let newText=textToCopy.split(/[ ]+/)
+//   setText(newText.join(" "))
+//  }
+
+// upper code and lower code works same
+const handleExtraSpaces = () => {
+  const textToCopy = document.getElementById('myBox').value;
+  let newText = textToCopy.replace(/\s+/g, ' '); // Replace one or more spaces with a single space
+  setText(newText);
+}
 
 
   const [text, setText]=useState('')
@@ -79,6 +94,7 @@ const handleCopy = () => {
     <button className='btn btn-primary mx-1' onClick={Uppercase} >Convert to Uppercase</button>
     <button className='btn btn-primary mx-1' onClick={Lowercase} >Convert to Lowercase</button>
     <button className='btn btn-primary mx-1' onClick={handleCopy} >Copy Text</button>
+    <button className='btn btn-primary mx-1' onClick={handleExtraSpaces} >Remove Extra Space</button>
 
        </div>
        <div className="container my-3">
