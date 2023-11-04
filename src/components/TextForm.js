@@ -29,6 +29,12 @@ export default function TextForm(props) {
     setText(event.target.value)
 
   }
+
+const handleCopy =()=>{
+  console.log( "copy is clicked")
+}
+
+
   const [text, setText]=useState('')
 
     return ( 
@@ -45,6 +51,7 @@ export default function TextForm(props) {
     <button className='btn btn-primary mx-1' onClick={handleClear} >Clear Text</button>
     <button className='btn btn-primary mx-1' onClick={Uppercase} >Convert to Uppercase</button>
     <button className='btn btn-primary mx-1' onClick={Lowercase} >Convert to Lowercase</button>
+    <button className='btn btn-primary mx-1' onClick={handleCopy} >Copy Text</button>
 
        </div>
        <div className="container my-3">
