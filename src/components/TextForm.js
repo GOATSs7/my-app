@@ -30,9 +30,35 @@ export default function TextForm(props) {
 
   }
 
-const handleCopy =()=>{
-  console.log( "copy is clicked")
+// const handleCopy =()=>{
+//   console.log( "copy is clicked")
+//   let text=document.getElementById('myBox')
+//   text.select();
+//   navigator.clipboard.writeText(text.value)
+// }
+
+const handleCopy = () => {
+  const textToCopy = document.getElementById('myBox');
+  if (textToCopy) {
+    const selectedText = textToCopy.value.substring(textToCopy.selectionStart, textToCopy.selectionEnd);
+
+    if (selectedText) {
+      navigator.clipboard.writeText(selectedText).then(
+        function () {
+          console.log('Selected text copied to clipboard');
+        },
+        function (err) {
+          console.error('Unable to copy selected text: ', err);
+        }
+      );
+    }
+  }
+  else{
+    textToCopy.select();
+    navigator.clipboard.writeText(textToCopy.value)
 }
+};
+
 
 
   const [text, setText]=useState('')
@@ -40,6 +66,7 @@ const handleCopy =()=>{
     return ( 
 
 <>
+
       <div className='container'>
         
        <h1>{props.heading}</h1>
