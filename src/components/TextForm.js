@@ -62,6 +62,7 @@ const textToCopy = document.getElementById('myBox');
  }
 };
 
+
 //  const handleExtraSpaces =()=>{
 //   const textToCopy = document.getElementById('myBox').value;  
 //   let newText=textToCopy.split(/[ ]+/)
@@ -95,6 +96,7 @@ const handleExtraSpaces = () => {
     <button className='btn btn-primary mx-1' onClick={Lowercase} >Convert to Lowercase</button>
     <button className='btn btn-primary mx-1' onClick={handleCopy} >Copy Text</button>
     <button className='btn btn-primary mx-1' onClick={handleExtraSpaces} >Remove Extra Space</button>
+  
 
        </div>
        <div className="container my-3">
