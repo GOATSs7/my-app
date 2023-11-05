@@ -3,25 +3,31 @@ import React ,{useState} from 'react'
 
 
 
-
 export default function TextForm(props) {
 
+
+  //clear text
   const handleClear=()=>{
     let newText='';
     setText(newText)
+    props.showAlert("Text Is Cleared" ,"success")
   }
 
+  //uppercase
   const Uppercase =()=>{
     
-   
     let newText=text.toUpperCase();
     setText(newText)
+    props.showAlert("Text Is Converted To Uppercase" ,"success")
   }
+
+  //lowercase
   const Lowercase =()=>{
     
    
     let newText=text.toLowerCase();
     setText(newText)
+    props.showAlert("Text Is Converted To Lowercase","success")
   }
   
   const handleOnChange =(event)=>{
@@ -42,6 +48,7 @@ export default function TextForm(props) {
 //  this code will copy whole text as well as select text only so this has more functionality than upper code
 const handleCopy = () => {
 const textToCopy = document.getElementById('myBox');
+props.showAlert("Copied to Clipboard" ,"success")
   if (textToCopy) {
     const selectedText = textToCopy.value.substring(textToCopy.selectionStart, textToCopy.selectionEnd);
 
@@ -74,6 +81,7 @@ const handleExtraSpaces = () => {
   const textToCopy = document.getElementById('myBox').value;
   let newText = textToCopy.replace(/\s+/g, ' '); // Replace one or more spaces with a single space
   setText(newText);
+  props.showAlert("Extra Spaces Removed" ,"success")
 }
 
 
