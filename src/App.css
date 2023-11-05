@@ -40,11 +40,13 @@
 
 /* my css */
 .btn{
+    
     border-top-left-radius: 0;
-    border-top-right-radius: 5px;
+    border-top-right-radius: 15px;
     border-bottom: 7px solid rgb(255, 123, 0);
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 15px;
     border-bottom-right-radius: 0px;
+   
 }
 .btn:hover{
     color: #282c34;

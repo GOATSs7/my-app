@@ -5,7 +5,9 @@ import React ,{useState} from 'react'
 
 export default function TextForm(props) {
 
+  const [text, setText]=useState('')
 
+  
   //clear text
   const handleClear=()=>{
     let newText='';
@@ -84,8 +86,11 @@ const handleExtraSpaces = () => {
   props.showAlert("Extra Spaces Removed" ,"success")
 }
 
+//to count words 
+const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
 
-  const [text, setText]=useState('')
+
+ 
 
     return ( 
 
@@ -112,7 +117,7 @@ const handleExtraSpaces = () => {
        </div>
        <div className="container my-3" >
         <h2>Your Text Summary</h2>
-         <p>{text.split(" ").length} words and {text.length} characters </p>
+         <p>{words} words and {text.length} characters </p>
          <p>{0.008*text.split(" ").length} Minutes Read</p>
        </div>
          <h2>Preview</h2>
