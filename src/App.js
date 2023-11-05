@@ -13,7 +13,7 @@ function App() {
     
     if(mode==='light'){
         setMode('dark')
-        document.body.style.backgroundColor='black'
+        document.body.style.backgroundColor='#042743'
     }
     else{
         setMode('light')
@@ -25,14 +25,14 @@ function App() {
 
        <>
        <Navbar title = "textUtils" about = "About" mode={mode} toggleMode={toggleMode}/>
-       <div className={`container my-3 ${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
+       <div className={`container my-3 ${mode === 'dark' ? '#042743 text-light' : ''}`}>
         
 
-       <div className={`container my-3 ${mode === 'dark' ? 'bg-dark' : 'bg-light'}`} style={{ backgroundColor: mode === 'dark' ? '#333' : 'white' }}>
-  <TextForm heading="Enter the text to analyze" />
+       <div className={`container my-3 ${mode === 'dark' ? '#042743' : 'bg-light'}`} style={{ backgroundColor: mode === 'dark' ? '#042743' : 'white' }}>
+  <TextForm heading="Enter the text to analyze" mode={mode}/>
 </div>
 
-
+ 
 
 
 

@@ -83,11 +83,14 @@ const handleExtraSpaces = () => {
 
 <>
 
-      <div className='container'>
+      <div   className="container"
+        style={{
+          backgroundColor: props.mode === 'dark' ? '#042743' : 'white', // Change background color
+        }}>
         
        <h1>{props.heading}</h1>
         <div className='mb-3'>
-        <textarea name=" " id="myBox" cols="30" rows="10" className='form-control' value={text} onChange={handleOnChange} ></textarea>
+        <textarea  id="myBox" cols="30" rows="10" className='form-control' value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='light'? 'white' : 'gray' , color:props.mode==='dark' ?'white':'black' }} ></textarea>
 
       </div>
        
@@ -99,13 +102,13 @@ const handleExtraSpaces = () => {
   
 
        </div>
-       <div className="container my-3">
+       <div className="container my-3" >
         <h2>Your Text Summary</h2>
          <p>{text.split(" ").length} words and {text.length} characters </p>
          <p>{0.008*text.split(" ").length} Minutes Read</p>
        </div>
          <h2>Preview</h2>
-         <p>{text} </p>
+         <p>{text.length>0?text:'Enter text in above text area to preview here'}</p>
 </>
       
     )
