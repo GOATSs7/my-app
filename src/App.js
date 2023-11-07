@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -53,7 +54,7 @@ function App() {
 
         {/* textform  */}
         <div
-          className={`container my-3 ${
+          className={`container my-15 ${
             mode === "dark" ? "#042743" : "bg-light"
           } ${mode === "dark" ? "#042743 text-light" : ""}`}
           style={{ backgroundColor: mode === "dark" ? "#042743" : "white" }}
@@ -76,7 +77,7 @@ function App() {
           {/* <About/> */}
         </div>
       </Router>
-
+      <Footer />
       {/* <TextForm heading="Enter the text to analyze"/> */}
 
       {/* </div> */}
